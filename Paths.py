@@ -1,0 +1,11 @@
+class ReadPath():
+    def documents(self):
+        return "C:\\Users\\jefer\\OneDrive\\Documentos\\"
+    def dowload(self):
+        return "C:\\Users\\jefer\\Downloads\\"
+    def docxPath(self):
+        return r"C:\\Users\\jefer\\OneDrive\\Documentos\\DOCX\\"
+    def pdfPath(self):
+        return  r"C:\\Users\\jefer\\OneDrive\\Documentos\\PDF\\"
+    def txtPath(self):
+        return  r"C:\\Users\\jefer\\OneDrive\\Documentos\\TXT\\"
