@@ -3,7 +3,7 @@
 > Transfer files in an easy way. I have thought on developing this project, because I almost all of the
 > time do not separate simple files, and in the end this becomes a messing stuff.
 
-##What you can do:
+## What you can do:
 The available options are:
 1. PDF tranfer;
 2. DOCX transfer;
