@@ -1,51 +1,39 @@
-import os
-import QuantumTransfer
 import Paths
 import DocxFile
 import PdfFile
 import TxtFile
 
-if __name__ == '__main__':
+def run():
     path = Paths.ReadPath()
-    transfer = QuantumTransfer.fileTransfer()
-    input_user =""
-    while input_user != 'S':
-        option = input(str('''
-        Digite 'Dowload' para executar transferências de arquivos neste local,
-                            ou 'Documents' para executar tranferência de arquivo em documentos: '''
-                        )).lower()
-        if option == 'dowload':
-            while input_user != 'S':
-                optionMove = int(input(''' Digite 
-                1 para PDF
-                2 para DOCX
-                3 para TXT: '''))
-                if optionMove == 1:
-                    PdfFile.PdfFile.executeTransfer(path.dowload())
-                elif optionMove == 2:
-                    DocxFile.DocxFile.executeTransfer(path.dowload())
-                elif optionMove == 3:
-                    TxtFile.TxtFile.executeTransfer(path.dowload())
-                else:
-                    print("Invalid Option")
-                break
-        elif option == 'documents':
-            while input_user != 'S':
-                optionMove = int(input(''' Digite 
-                1 para PDF
-                2 para DOCX
-                3 para TXT: '''))
-                print(optionMove == 1)
-                if optionMove == 1:
-                    PdfFile.PdfFile.executeTransfer(path.documents())
-                elif optionMove == 2:
-                    DocxFile.DocxFile.executeTransfer(path.documents())
-                elif optionMove == 3:
-                    TxtFile.TxtFile.executeTransfer(path.documents())
-                else:
-                    print("Invalid Option")
-                break
-        else:
-            print("Opção Inválida")
-            break
-        input_user = input(str("Deseja sair? (S/N)")).upper()
+    docx = DocxFile.DocxFile()
+    pdf = PdfFile.PdfFile()
+    txt = TxtFile.TxtFile()
+    option = input(str('''
+    Digite 'Dowload' para executar transferências de arquivos neste local,
+                        ou 'Documents' para executar tranferência de arquivo em documentos: '''
+                )).lower()
+    optionMove = int(input(''' Digite 
+    1 para PDF
+    2 para DOCX
+    3 para TXT: '''))
+    print(f"optionMove {optionMove}")
+    print(f"option {option}")
+    print(f"path.documents(): {path.documents()}")
+    documents = path.documents()
+    download = path.dowload()
+    if optionMove == 1 and option == 'dowload':
+        pdf.executeTransfer(download)
+    elif optionMove == 2 and option == 'dowload':
+        docx.executeTransfer(download)
+    elif optionMove == 3 and option == 'dowload':
+        txt.executeTransfer(download)
+    if optionMove == 1 and option == 'documents':
+        pdf.executeTransfer(documents)
+    elif optionMove == 2 and option == 'documents':
+        docx.executeTransfer(documents)
+    elif optionMove == 3 and option == 'documents':
+        txt.executeTransfer(documents)
+    else: print("Invalid Option")
+
+if __name__ == '__main__':
+    run()

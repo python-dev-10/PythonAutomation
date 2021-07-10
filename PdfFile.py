@@ -6,7 +6,7 @@ class PdfFile:
     def executeTransfer(self, main_path):
         path = Paths.ReadPath()
         files = []
-
+        print("entrou function")
         for (dirpath, dirnames, filenames) in walk(main_path):
             # files.extend(filenames)
             print(f'files.extend(filenames): {files.extend(filenames)}')
