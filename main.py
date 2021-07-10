@@ -2,6 +2,7 @@ import Paths
 import DocxFile
 import PdfFile
 import TxtFile
+import WelcomeMessage
 
 def run():
     path = Paths.ReadPath()
@@ -25,4 +26,5 @@ def run():
     else: print("Invalid Option")
 
 if __name__ == '__main__':
+    WelcomeMessage.welcomeMessage()
     run()
