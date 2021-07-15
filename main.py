@@ -1,8 +1,4 @@
-import Paths
-import DocxFile
-import PdfFile
-import TxtFile
-import WelcomeMessage
+from Operations import TxtFile, Paths, WelcomeMessage, DocxFile, PdfFile
 
 def run():
     path = Paths.ReadPath()
