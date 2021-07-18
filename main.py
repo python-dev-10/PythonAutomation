@@ -22,12 +22,11 @@ def run():
     if optionMove == 1 and option == 1: pdf.executeTransfer(path.dowload())
     elif optionMove == 2 and option == 1:docx.executeTransfer(path.dowload())
     elif optionMove == 3 and option == 1:txt.executeTransfer(path.dowload())
-    elif optionMove == 4 and option == 1:
-        print("entrou aqui")
-        zip.executeTransfer(path.dowload())
+    elif optionMove == 4 and option == 1:zip.executeTransfer(path.dowload())
     if optionMove == 1 and option == 2:pdf.executeTransfer(path.documents())
     elif optionMove == 2 and option == 2:docx.executeTransfer(path.documents())
     elif optionMove == 3 and option == 2:txt.executeTransfer(path.documents())
+    elif optionMove == 4 and option == 2:zip.executeTransfer(path.documents())
     else: print("Invalid Option")
 
 if __name__ == '__main__':
