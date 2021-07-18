@@ -21,3 +21,4 @@ class PdfFile:
                 old_file_path = os.path.join(main_path, file)
                 new_file_path = os.path.join(path.pdfPath(), file)
                 shutil.move(old_file_path, new_file_path)
+                print(shutil.move(old_file_path, new_file_path))

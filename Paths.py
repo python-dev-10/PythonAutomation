@@ -9,3 +9,5 @@ class ReadPath():
         return  r"C:\\Users\\jefer\\OneDrive\\Documentos\\PDF\\"
     def txtPath(self):
         return  r"C:\\Users\\jefer\\OneDrive\\Documentos\\TXT\\"
+    def zipPath(self):
+        return r"C:\\Users\\jefer\\OneDrive\\Documentos\\ZIP\\"
