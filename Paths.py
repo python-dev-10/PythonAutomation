@@ -1,13 +1,31 @@
+import os
 class ReadPath():
-    def documents(self):
-        return "C:\\Users\\jefer\\OneDrive\\Documentos\\"
-    def dowload(self):
-        return "C:\\Users\\jefer\\Downloads\\"
-    def docxPath(self):
-        return r"C:\\Users\\jefer\\OneDrive\\Documentos\\DOCX\\"
-    def pdfPath(self):
-        return  r"C:\\Users\\jefer\\OneDrive\\Documentos\\PDF\\"
-    def txtPath(self):
-        return  r"C:\\Users\\jefer\\OneDrive\\Documentos\\TXT\\"
-    def zipPath(self):
-        return r"C:\\Users\\jefer\\OneDrive\\Documentos\\ZIP\\"
+    def getMainPathUser(self):
+        home = os.path.expanduser('~')
+        return home
+    def documents(self,home_path):
+        return rf"{home_path}{os.sep}OneDrive{os.sep}Documentos{os.sep}"
+
+    def dowload(self,home_path):
+        return rf"{home_path}{os.sep}Downloads{os.sep}"
+
+    def docxPath(self,home_path):
+        if os.path.exists(f'{home_path}{os.sep}PythonMover{os.sep}DOCX{os.sep}'):
+            return rf"{home_path}{os.sep}PythonMover{os.sep}DOCX{os.sep}"
+        else:
+            return os.makedirs(f'{home_path}{os.sep}PythonMover{os.sep}DOCX{os.sep}')
+    def pdfPath(self,home_path):
+        if os.path.exists(f'{home_path}{os.sep}PythonMover{os.sep}PDF{os.sep}'):
+            return rf"{home_path}{os.sep}PythonMover{os.sep}PDF{os.sep}"
+        else:
+            return os.makedirs(f'{home_path}{os.sep}PythonMover{os.sep}PDF{os.sep}')
+    def txtPath(self,home_path):
+        if os.path.exists(f'{home_path}{os.sep}PythonMover{os.sep}TXT{os.sep}'):
+            return rf"{home_path}{os.sep}PythonMover{os.sep}TXT{os.sep}"
+        else:
+            return os.makedirs(f'{home_path}{os.sep}PythonMover{os.sep}TXT{os.sep}')
+    def zipPath(self,home_path):
+        if os.path.exists(f'{home_path}{os.sep}PythonMover{os.sep}ZIP{os.sep}'):
+            return rf"{home_path}{os.sep}PythonMover{os.sep}ZIP{os.sep}"
+        else:
+            return os.makedirs(f'{home_path}{os.sep}PythonMover{os.sep}ZIP{os.sep}')

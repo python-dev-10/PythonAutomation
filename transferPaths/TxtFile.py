@@ -2,7 +2,7 @@ from os import walk
 import os
 import shutil
 import Paths
-class TxtFile:
+class TxtFile():
     def executeTransfer(self, main_path):
         path = Paths.ReadPath()
         files = []
@@ -18,6 +18,7 @@ class TxtFile:
                 continue
             print(f'2: {file}')
             if file.__contains__('.txt'):
+                print(main_path)
                 old_file_path = os.path.join(main_path, file)
-                new_file_path = os.path.join(path.txtPath(), file)
+                new_file_path = os.path.join(path.txtPath(main_path), file)
                 shutil.move(old_file_path, new_file_path)

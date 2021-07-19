@@ -18,7 +18,8 @@ class PdfFile:
                 continue
             print(f'2: {file}')
             if file.__contains__(".pdf"):
+                print(main_path)
                 old_file_path = os.path.join(main_path, file)
-                new_file_path = os.path.join(path.pdfPath(), file)
+                new_file_path = os.path.join(path.pdfPath(main_path), file)
                 shutil.move(old_file_path, new_file_path)
                 print(shutil.move(old_file_path, new_file_path))
