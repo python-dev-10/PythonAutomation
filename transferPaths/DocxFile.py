@@ -10,10 +10,6 @@ class DocxFile:
         files = []
 
         for (dirpath, dirnames, filenames) in walk(main_path):
-            # files.extend(filenames)
-            print(f'files.extend(filenames): {files.extend(filenames)}')
-            print(f'filenames: {filenames}')
-            print(f'files: {files}')
             break
         for file in files:
             if not file.__contains__(".docx") and not file.__contains__(".pdf") and not file.__contains__(".txt"):

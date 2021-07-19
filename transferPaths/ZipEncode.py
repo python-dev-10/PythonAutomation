@@ -10,9 +10,6 @@ class Zip:
         files = []
 
         for (dirpath, dirnames, filenames) in walk(main_path):
-            print(f'files.extend(filenames): {files.extend(filenames)}')
-            print(f'filenames: {filenames}')
-            print(f'files: {files}')
             break
         for file in files:
             if not file.__contains__('.zip'):
@@ -29,5 +26,6 @@ class Zip:
                 old_file_path = os.path.join(main_path, file)
                 new_file_path = os.path.join(path.zipPath(main_path), file)
                 shutil.move(old_file_path, new_file_path)
+                message.successMessage("Arquivos movidos com sucesso")
             except:
                 message.errorMessage('Não foi possível mover o arquivo')

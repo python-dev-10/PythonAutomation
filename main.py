@@ -1,8 +1,8 @@
 import Paths
 from transferPaths import DocxFile, PdfFile, ZipEncode, TxtFile
 import WelcomeMessage
+from customMessages import CustomMessage
 import os
-from colorama import Fore
 
 
 def run():
@@ -12,6 +12,7 @@ def run():
     txt = TxtFile.TxtFile()
     zip = ZipEncode.Zip()
     home = path.getMainPathUser()
+    message = CustomMessage.CustomMessage()
     option = int(input('''
     Digite 1 para executar transferências de arquivos para downloads,
     ou 2 para executar tranferência de arquivo em documentos: '''
@@ -39,10 +40,10 @@ def run():
         elif optionMove == 4 and option == 2:
             zip.executeTransfer(path.documents(home))
         else:
-            print(f"{Fore.RED}Invalid Option")
+            message.errorMessage('Invalid Option')
     else:
         os.makedirs(f'{home}{os.sep}PythonMover{os.sep}')
-        if os.path.exists(f'{home}{os.sep}PythonMover{os.sep}'): return f'{Fore.GREEN}Directory Created, start the application again{Fore.RESET}'
+        if os.path.exists(f'{home}{os.sep}PythonMover{os.sep}'): return message.successMessage('Directory Created, start the application again')
 
 
 if __name__ == '__main__':
