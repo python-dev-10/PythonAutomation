@@ -4,7 +4,7 @@ class ReadPath():
         home = os.path.expanduser('~')
         return home
     def documents(self,home_path):
-        return rf"{home_path}{os.sep}OneDrive{os.sep}Documentos{os.sep}"
+        return rf"{home_path}{os.sep}Documentos{os.sep}"
 
     def dowload(self,home_path):
         return rf"{home_path}{os.sep}Downloads{os.sep}"
