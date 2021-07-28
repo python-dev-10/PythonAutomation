@@ -16,5 +16,5 @@ The PDF, DOCX, and TXT transfer for a while, move the files to the following dir
 
 ## Future Updates:
 1. Would be possible to move files to more locations;
-2. User Interface will be adapting for a new look;
+2. User Interface will be adapting for a new GUI Interface;
 3. Possibility of all directories being created or not, and then choose those directories to move other files.
