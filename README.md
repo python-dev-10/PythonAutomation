@@ -8,6 +8,7 @@ The available options are:
 1. PDF tranfer;
 2. DOCX transfer;
 3. TXT tranfer;
+4. ZIP transfer
 
 The readed paths available are "Documents" and "Downloads", the mainly paths where I store all of my documents and dowloads randomly.
 
