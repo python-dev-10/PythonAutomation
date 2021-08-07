@@ -12,7 +12,7 @@ class DocxFile:
         for (dirpath, dirnames, filenames) in walk(main_path):
             break
         for file in files:
-            if not file.__contains__(".docx") and not file.__contains__(".pdf") and not file.__contains__(".txt"):
+            if not file.endswith(".docx") and not file.endswith(".pdf") and not file.endswith(".txt"):
                 continue
             print(f'2: {file}')
             if file.__contains__(".docx"):
