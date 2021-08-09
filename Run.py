@@ -3,7 +3,7 @@ from transferPaths import DocxFile, PdfFile, ZipEncode, TxtFile
 from customMessages import CustomMessage
 from tkinter import Tk
 from tkinter.filedialog import askdirectory
-
+from tabulate import tabulate
 from tkinter.messagebox import showinfo
 import os
 
@@ -19,11 +19,9 @@ def run():
     showinfo("FileTransfer", "In sequence will open a screen, where you can choose the directory you want verify the files")
     directory = askdirectory()
     try:
-        optionMove = int(input(''' Type :
-            1 for PDF
-            2 for DOCX
-            3 for TXT
-            4 for ZIP: '''))
+        d=[["PDF", 1],["DOCX", 2],["TXT", 3],["ZIP", 4]]
+        optionMove = int(input(f"Which Operation do you want? Type them value:\n {tabulate(d, headers=['Option', 'Value'])} \n"))
+
         if os.path.exists(f'{home}{os.sep}PythonMover{os.sep}'):
             if optionMove == 1:
                 pdf.executeTransfer(directory)
