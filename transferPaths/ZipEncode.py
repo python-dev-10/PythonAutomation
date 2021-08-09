@@ -7,9 +7,9 @@ from customMessages import CustomMessage
 class Zip:
 
     def executeTransfer(self, main_path):
-        print(main_path)
         message = CustomMessage.CustomMessage()
         path = Paths.ReadPath()
+
         for (dirpath, dirnames, filenames) in walk(main_path):
             break
         for file in filenames:

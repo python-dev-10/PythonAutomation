@@ -3,6 +3,7 @@ class ReadPath():
     def getMainPathUser(self):
         home = os.path.expanduser('~')
         return home
+
     def documents(self):
         return rf"{ReadPath.getMainPathUser()}{os.sep}Documentos{os.sep}"
 

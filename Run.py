@@ -16,7 +16,6 @@ def run():
     zip = ZipEncode.Zip()
     home = path.getMainPathUser()
     message = CustomMessage.CustomMessage()
-    print(home)
     Tk().withdraw()
     showinfo("FileTransfer", "Em sequência abrirá uma tela onde poderá escolher o diretório que deseja verificar os arquivos")
     directory = askdirectory()

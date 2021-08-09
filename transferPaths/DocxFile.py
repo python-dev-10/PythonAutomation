@@ -4,9 +4,11 @@ import shutil
 import Paths
 from customMessages import CustomMessage
 class DocxFile:
+
     def executeTransfer(self, main_path):
         message = CustomMessage.CustomMessage()
         path = Paths.ReadPath()
+
         for (dirpath, dirnames, filenames) in walk(main_path):
             break
         for file in filenames:

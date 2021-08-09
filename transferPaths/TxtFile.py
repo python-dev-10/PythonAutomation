@@ -5,7 +5,6 @@ import Paths
 from customMessages import CustomMessage
 class TxtFile():
     def executeTransfer(self, main_path):
-        print(main_path)
         path = Paths.ReadPath()
         message = CustomMessage.CustomMessage()
 
