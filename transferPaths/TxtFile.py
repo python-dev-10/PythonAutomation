@@ -18,13 +18,13 @@ class TxtFile():
                 if not os.path.exists(path.txtPath()):
                     try:
                         os.makedirs(path.txtPath())
-                        message.successMessage("Diretório criado com sucesso")
+                        message.successMessage("TXT directory created successfully")
                     except OSError:
-                        message.errorMessage("Não foi possível criar diretório")
+                        message.errorMessage("Could not create TXT directory")
             try:
                 old_file_path = os.path.join(main_path, file)
                 new_file_path = os.path.join(path.txtPath(), file)
                 shutil.move(old_file_path, new_file_path)
-                message.successMessage("Arquivos movidos com sucesso")
+                message.successMessage(f"File {file} moved successfully to -> {new_file_path}")
             except:
-                message.errorMessage("Não foi possível mover os arquivos")
+                message.errorMessage("Could not move file")

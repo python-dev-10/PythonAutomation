@@ -15,17 +15,17 @@ class PdfFile:
             print(f"file {file}")
             if not file.__contains__(".PDF") and not file.__contains__(".pdf"):
                 continue
-            if file.endswith(".PDF"):
+            if file.endswith(".PDF") or file.endswith(".pdf"):
                 if not os.path.exists(path.pdfPath()):
                     try:
                         os.makedirs(path.pdfPath())
-                        message.successMessage('Directory Created')
+                        message.successMessage('PDF Directory Created')
                     except OSError:
-                        message.errorMessage("Erro ao criar o diretório")
+                        message.errorMessage("Could not create PDF directory")
                 try:
                     old_file_path = os.path.join(main_path, file)
                     new_file_path = os.path.join(path.pdfPath(), file)
                     shutil.move(old_file_path, new_file_path)
-                    message.successMessage("Arquivos Movidos com sucesso")
+                    message.successMessage(f"File {file} moved successfully to -> {new_file_path}")
                 except:
-                    message.errorMessage("Não foi possível mover arquivos")
+                    message.errorMessage("Could not move file")

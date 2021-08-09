@@ -18,13 +18,13 @@ class DocxFile:
                 if not os.path.exists(path.docxPath()):
                     try:
                         os.makedirs(path.docxPath())
-                        message.successMessage("Diretório DOCX criado com sucesso")
+                        message.successMessage("DOCX directory created successfully")
                     except OSError:
-                        message.errorMessage('Não foi possível criar o diretório')
+                        message.errorMessage('Could not create the directory DOCX')
             try:
                 old_file_path = os.path.join(main_path, file)
                 new_file_path = os.path.join(path.docxPath(), file)
                 shutil.move(old_file_path, new_file_path)
-                message.successMessage("Arquivos Movidos com sucesso")
+                message.successMessage(f"File {file} moved successfully to -> {new_file_path}")
             except:
-                message.errorMessage("Não foi possível mover o arquivo")
+                message.errorMessage("Could not move file")

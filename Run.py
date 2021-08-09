@@ -16,14 +16,14 @@ def run():
     home = path.getMainPathUser()
     message = CustomMessage.CustomMessage()
     Tk().withdraw()
-    showinfo("FileTransfer", "Em sequência abrirá uma tela onde poderá escolher o diretório que deseja verificar os arquivos")
+    showinfo("FileTransfer", "In sequence will open a screen, where you can choose the directory you want verify the files")
     directory = askdirectory()
     try:
-        optionMove = int(input(''' Digite :
-            1 para PDF
-            2 para DOCX
-            3 para TXT
-            4 para ZIP: '''))
+        optionMove = int(input(''' Type :
+            1 for PDF
+            2 for DOCX
+            3 for TXT
+            4 for ZIP: '''))
         if os.path.exists(f'{home}{os.sep}PythonMover{os.sep}'):
             if optionMove == 1:
                 pdf.executeTransfer(directory)
@@ -39,4 +39,4 @@ def run():
             os.makedirs(f'{home}{os.sep}PythonMover{os.sep}')
             if os.path.exists(f'{home}{os.sep}PythonMover{os.sep}'): return message.successMessage('Directory Created, start the application again')
     except ValueError:
-        print(message.errorMessage("ERRO, verifique o tipo de entrada, este campo apenas aceita números!"))
+        print(message.errorMessage("ERROR, check the input type, this field just accept numbers!"))

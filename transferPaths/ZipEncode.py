@@ -20,13 +20,13 @@ class Zip:
                 if not os.path.exists(path.zipPath()):
                     try:
                         os.makedirs(path.zipPath())
-                        message.successMessage("Diretório ZIP criado com sucesso")
+                        message.successMessage("ZIP directory created successfully")
                     except OSError:
-                        message.errorMessage('Não foi possível criar o diretório')
+                        message.errorMessage('Could not create ZIP directory')
             try:
                 old_file_path = os.path.join(main_path, file)
                 new_file_path = os.path.join(path.zipPath(), file)
                 shutil.move(old_file_path, new_file_path)
-                message.successMessage("Arquivos movidos com sucesso")
+                message.successMessage(f"File {file} moved successfully to -> {new_file_path}")
             except:
-                message.errorMessage('Não foi possível mover o arquivo')
+                message.errorMessage('Could not move file')

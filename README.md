@@ -12,7 +12,9 @@ The available options are:
 3. TXT tranfer;
 4. ZIP transfer
 
-The readed paths available are "Documents" and "Downloads", the mainly paths where I store all of my documents and dowloads randomly.
+You can read any directory from the version v1.6.2, that is, a directory dialog will appear wondering about the wanted directory.
+
+The `PythonMover` directory is located at the root directory, if it's not exist the program automatically will create one.
 
 The PDF, DOCX, TXT and ZIP transfer for a while, move the files to the following directory `PythonMover\PDF`, `PythonMover\DOCX`, `PythonMover\TXT` and `PythonMover\ZIP`.
 
