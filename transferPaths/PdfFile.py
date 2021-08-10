@@ -20,7 +20,7 @@ class PdfFile:
                     try:
                         os.makedirs(path.pdfPath())
                         message.successMessage('PDF Directory Created')
-                    except OSError:
+                    except:
                         message.errorMessage("Could not create PDF directory")
                 try:
                     old_file_path = os.path.join(main_path, file)

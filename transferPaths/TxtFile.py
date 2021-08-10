@@ -19,7 +19,7 @@ class TxtFile():
                     try:
                         os.makedirs(path.txtPath())
                         message.successMessage("TXT directory created successfully")
-                    except OSError:
+                    except:
                         message.errorMessage("Could not create TXT directory")
             try:
                 old_file_path = os.path.join(main_path, file)

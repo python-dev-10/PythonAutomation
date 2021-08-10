@@ -21,7 +21,7 @@ class Zip:
                     try:
                         os.makedirs(path.zipPath())
                         message.successMessage("ZIP directory created successfully")
-                    except OSError:
+                    except:
                         message.errorMessage('Could not create ZIP directory')
             try:
                 old_file_path = os.path.join(main_path, file)

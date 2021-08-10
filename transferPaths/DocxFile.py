@@ -19,7 +19,7 @@ class DocxFile:
                     try:
                         os.makedirs(path.docxPath())
                         message.successMessage("DOCX directory created successfully")
-                    except OSError:
+                    except:
                         message.errorMessage('Could not create the directory DOCX')
             try:
                 old_file_path = os.path.join(main_path, file)
