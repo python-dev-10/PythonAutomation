@@ -6,7 +6,7 @@ from customMessages import CustomMessage
 
 class Zip:
 
-    def executeTransfer(self, main_path):
+    def execute_transfer_zip(self, main_path):
         message = CustomMessage.CustomMessage()
         path = Paths.ReadPath()
 
@@ -20,13 +20,13 @@ class Zip:
                 if not os.path.exists(path.zipPath()):
                     try:
                         os.makedirs(path.zipPath())
-                        message.successMessage("ZIP directory created successfully")
+                        message.success_message("ZIP directory created successfully")
                     except:
-                        message.errorMessage('Could not create ZIP directory')
+                        message.error_message('Could not create ZIP directory')
             try:
                 old_file_path = os.path.join(main_path, file)
                 new_file_path = os.path.join(path.zipPath(), file)
                 shutil.move(old_file_path, new_file_path)
-                message.successMessage(f"File {file} moved successfully to -> {new_file_path}")
+                message.success_message(f"File {file} moved successfully to -> {new_file_path}")
             except:
-                message.errorMessage('Could not move file')
+                message.error_message('Could not move file')

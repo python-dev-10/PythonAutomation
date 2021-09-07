@@ -1,8 +1,8 @@
 from colorama import Fore
 class CustomMessage:
 
-    def errorMessage(self, content):
+    def error_message(self, content):
         return print(f"{Fore.RED}{content}{Fore.RESET}")
 
-    def successMessage(self, content):
+    def success_message(self, content):
         return print(f"{Fore.GREEN}{content}{Fore.RESET}")

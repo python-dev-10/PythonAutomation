@@ -1,5 +1,5 @@
 import WelcomeMessage
 import Run
-WelcomeMessage.welcomeMessage()
+WelcomeMessage.welcome_message()
 Run.run()
-WelcomeMessage.goodByeMessage()
+WelcomeMessage.good_bye_message()

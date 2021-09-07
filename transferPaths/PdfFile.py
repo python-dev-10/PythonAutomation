@@ -5,7 +5,7 @@ import Paths
 from customMessages import CustomMessage
 class PdfFile:
 
-    def executeTransfer(self, main_path):
+    def execute_transfer_pdf(self, main_path):
         message = CustomMessage.CustomMessage()
         path = Paths.ReadPath()
         for (dirpath, dirnames, filenames) in walk(main_path):
@@ -16,16 +16,16 @@ class PdfFile:
             if not file.__contains__(".PDF") and not file.__contains__(".pdf"):
                 continue
             if file.endswith(".PDF") or file.endswith(".pdf"):
-                if not os.path.exists(path.pdfPath()):
+                if not os.path.exists(path.pdf_path()):
                     try:
-                        os.makedirs(path.pdfPath())
-                        message.successMessage('PDF Directory Created')
+                        os.makedirs(path.pdf_path())
+                        message.success_message('PDF Directory Created')
                     except:
-                        message.errorMessage("Could not create PDF directory")
+                        message.error_message("Could not create PDF directory")
                 try:
                     old_file_path = os.path.join(main_path, file)
-                    new_file_path = os.path.join(path.pdfPath(), file)
+                    new_file_path = os.path.join(path.pdf_path(), file)
                     shutil.move(old_file_path, new_file_path)
-                    message.successMessage(f"File {file} moved successfully to -> {new_file_path}")
+                    message.success_message(f"File {file} moved successfully to -> {new_file_path}")
                 except:
-                    message.errorMessage("Could not move file")
+                    message.error_message("Could not move file")
